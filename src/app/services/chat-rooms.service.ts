@@ -26,7 +26,7 @@ export interface IChatMessage {
   author: string;
   date: number;
   isAuthor: boolean;
-  authorDetails: FirebaseObjectObservable<IUser>
+  authorDetails: FirebaseObjectObservable<IUser>;
 }
 
 @Injectable()

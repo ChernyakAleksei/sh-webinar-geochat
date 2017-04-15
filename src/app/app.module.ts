@@ -30,6 +30,13 @@ export const firebaseConfig = {
     messagingSenderId: "1031128435695"
 };
 
+export function initializerFactory(auth: AuthService) {
+  return function() {
+    auth.loadUser()
+  } 
+}
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +62,7 @@ export const firebaseConfig = {
     AuthGuardService,
     {
       provide: APP_INITIALIZER,
-      useFactory: (auth: AuthService) => () => auth.loadUser(),
+      useFactory: initializerFactory,
       deps: [AuthService],
       multi: true
     }
