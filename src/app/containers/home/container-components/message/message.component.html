@@ -1,0 +1,12 @@
+<div class="Message" [ngClass]="{'Message--me': message.isAuthor}">
+    <div class="Message-row">
+        <div class="Message-avatar">
+            {{ (message.authorDetails | async)?.nickname[0] }}
+        </div>
+        <div>
+            <div class="Message-userName">{{ (message.authorDetails | async)?.nickname }}</div>
+            <div class="Message-text">{{ message.text }}</div>
+        </div>
+    </div>
+    <div class="Message-status">{{ message.date | dateFormat:'HH.mm, DD MMMM' }}</div>
+</div>

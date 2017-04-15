@@ -1,0 +1,48 @@
+@import "variables";
+
+app-map {
+    height: 100vh;
+    width: 100vw;
+    display: block;
+}
+
+
+.Panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 433px;
+    background-color: #f6f7f8;
+    color: $text;
+    padding-bottom: 60px;
+
+
+    &-controlsPanel {
+        background-color: #2e3c4a;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    &-panelBtn {
+        width: 216px;
+        cursor: pointer;
+
+        img {
+            width: 30px;
+            height: 30px;
+            display: block;
+            margin: auto;
+        }
+    }
+
+    &-panelBtn--active {
+        border-top: 4px solid $input-border;
+    }
+}

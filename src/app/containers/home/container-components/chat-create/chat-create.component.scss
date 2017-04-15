@@ -1,0 +1,31 @@
+@import "variables";
+
+
+.CreateForm {
+    padding: 20px;
+
+    &-title {
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: 300;
+    }
+
+    &-formControl {
+        margin-bottom: 10px;
+        text-align: left;
+        input {
+            color: $text;
+            text-align: left;
+
+
+            ::-webkit-input-placeholder {
+                color: $text;
+                font-weight: 300;
+            }
+        }
+    }
+
+    &-pickCoordsBtn {
+        margin-right: 10px;
+    }
+}

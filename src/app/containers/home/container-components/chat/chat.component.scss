@@ -1,0 +1,101 @@
+@import "variables";
+
+
+.Chat {
+    &-header {
+        padding: 25px 20px;
+        border-bottom: 1px solid $divider;
+    }
+
+    &-name {
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: 300;
+    }
+
+    &-onlineStatus {
+        font-size: 12px;
+        font-weight: 300;
+        margin-top: 10px;
+        padding-left: 10px;
+        position: relative;
+        &:before {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background-color: green;
+            top: 5px;
+            left: 0;
+            content: '';
+            display: block;
+        }
+    }
+
+    &-chatbox {
+        height: calc(100vh - 284px);
+        position: relative;
+    }
+
+    &-messages {
+        padding: 20px;
+        overflow: auto;
+        height: 100%;
+    }
+
+    &-status {
+        color: $text-sub;
+        font-size: 12px;
+        font-weight: 300;
+        position: absolute;
+        bottom: 5px;
+        left: 20px;
+    }
+
+    &-controls {
+        height: 180px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    &-msgInput {
+        height: 120px;
+        display: block;
+        padding: 20px;
+        width: 100%;
+        color: $text;
+        border: none;
+
+        ::-webkit-input-placeholder {
+            color: $text;
+            font-weight: 300;
+        }
+    }
+
+    &-sendBtn {
+        position: absolute;
+        top: 65px;
+        right: 12px;
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        border: none;
+        cursor: pointer;
+
+        img {
+            width: 45px;
+            height: 45px;
+        }
+    }
+
+    &-prompt {
+        text-align: center;
+        height: 100%;
+        margin-top: 100px;
+        font-size: 30px;
+        padding: 20px;
+    }
+
+}

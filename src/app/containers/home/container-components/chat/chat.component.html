@@ -1,0 +1,22 @@
+<div class="Chat">
+    <div *ngIf="chat">
+      <div class="Chat-header">
+          <div class="Chat-name">{{ (chat | async).name }}</div>
+          <div class="Chat-onlineStatus">{{ (chat | async).users.length }} участников онлайн</div>
+      </div>
+
+      <div class="Chat-chatbox">
+          <div class="Chat-messages" *ngIf="chat">
+            <app-message *ngFor="let msg of messages | async" [message]="msg"></app-message>
+          </div>
+      </div>
+
+      <div class="Chat-controls">
+        <textarea class="Chat-msgInput" [(ngModel)]="message" placeholder="напиши текст"></textarea>
+        <button class="Chat-sendBtn" (click)="sendMessage()"><img src="/assets/svg/send-btn.svg" /></button>
+      </div>
+    </div>
+    <div *ngIf="!chat" class="Chat-prompt">
+      Пожалуйста, выберите один из чатов на карте
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div>
+    <app-map [lat]="lat" [lng]="lng" #map></app-map>
+    <div class="Panel">
+        <div class="Panel-content" [ngSwitch]="activeElement">
+            <app-chat *ngSwitchCase="'chat'" [chat]="activeChat" [messages]="messages" (newMessage)="sendMessage($event)"></app-chat>
+            <app-chat-create *ngSwitchCase="'create'" [mapClick]="map.onClick" (onChatCreate)="createChatRoom($event)"></app-chat-create>
+        </div>
+        <div class="Panel-controlsPanel">
+            <div class="Panel-panelBtn" (click)="setActive('chat')">
+                <img src="/assets/svg/chat.svg" />
+            </div>
+            <img src="/assets/images/devider.png" />
+            <div class="Panel-panelBtn" (click)="setActive('create')">
+                <img src="/assets/svg/plus.svg" />
+            </div>
+        </div>
+    </div>
+</div>

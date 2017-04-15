@@ -1,0 +1,16 @@
+<form class="CreateForm">
+  <h2 class="CreateForm-title">Создание чат-комнаты</h2>
+  <div class="CreateForm-formControl">
+      <input type="text" [(ngModel)]="name" name="name" class="InputControl CreateForm-input" placeholder="Название чата" />
+  </div>
+  <div class="CreateForm-formControl">
+      <input type="text" [(ngModel)]="lat" name="lat" class="InputControl CreateForm-input" placeholder="широта" />
+  </div>
+  <div class="CreateForm-formControl">
+      <input type="text" [(ngModel)]="lng" name="lng" class="InputControl CreateForm-input" placeholder="долгота" />
+  </div>
+  <div class="CreateForm-formControl">
+    <button class="Btn Brn--submit CreateForm-pickCoordsBtn" (click)="captureCoords()">Выбрать точку</button>
+    <button class="Btn Btn--submit CreateForm-submitBtn" (click)="createChatRoom()">Создать</button>
+  </div>
+</form>
